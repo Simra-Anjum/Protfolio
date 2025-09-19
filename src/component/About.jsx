@@ -25,12 +25,12 @@ const About = () => {
 
   return (
     <div
-    id="about"
+      id="about"
       ref={containerRef}
       className="mx-auto px-6 md:px-20 py-10 md:py-20 mt-16 w-[95%]"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-      
+       
         <div
           className={`text-center md:text-left transition-all duration-700 ${
             visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
@@ -50,36 +50,38 @@ const About = () => {
             <span className="text-[#6f05b8]">MERN stack</span>. I love solving
             problems with clean code and modern UI/UX design principles.
           </p>
+
+        
           <p className="mt-4 text-gray-700">
-            When I'm not coding, I explore new tech trends and contribute to
-            personal projects.
+            I completed my <span className="font-semibold">B.Tech in Computer Science</span> from{" "}
+            <span className="font-semibold text-[#6f05b8]">Shambhunath Institute of Engineering and Technology</span>. 
+            I have always had a strong interest in technical fields, constantly exploring new technologies and improving my skills.
+          </p>
+       
+          <p className="mt-4 text-gray-700">
+            When I'm not coding, I explore new tech trends and contribute to personal projects to further expand my knowledge.
           </p>
         </div>
 
-      
+       
         <div className="second flex justify-center">
-          
           <div
             className={`bg-[#e0c4f0] border-[1.5px] border-purple-800 rounded-full p-2 shadow-[0_0_25px_#8e44ad] transition-all duration-700 hover:scale-125 hover:shadow-[0_0_40px_#6f05b8] cursor-pointer ${
               visible ? "opacity-100 scale-100" : "opacity-0 scale-50"
             }`}
             style={{ transitionDelay: "0.2s" }}
           >
-           
             <div
               className={`bg-purple-900 rounded-full p-3 transition-all duration-700 hover:scale-105 ${
                 visible ? "opacity-100 scale-100" : "opacity-0 scale-50"
               }`}
               style={{ transitionDelay: "0.4s" }}
             >
-              
               <img
                 src={Profile_1}
                 alt="Simra"
-                className={`rounded-full w-48 h-48 md:w-60 md:h-60 object-cover transition-all duration-700 hover:scale-110 ${
-                  visible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-16"
+                className={`rounded-full w-48 h-48 md:w-72 md:h-72 object-cover transition-all duration-700 hover:scale-110 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
                 }`}
                 style={{ transitionDelay: "0.6s" }}
               />

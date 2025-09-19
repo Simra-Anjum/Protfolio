@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Profile_1 from "../assets/Profile_1.JPG";
+import Profile_1 from "../assets/Profile_1.jpg";
 
 const Header = () => {
   const containerRef = useRef(null);
@@ -67,9 +67,19 @@ const Header = () => {
             }`}
             style={{ transitionDelay: "0.8s" }}
           >
-            <button className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500">
-              View Resume
-            </button>
+ <button
+  onClick={() => window.open("/Simra_Anjum_Resume.docx.pdf.pdf", "_blank")}
+  className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+>
+  View Resume
+</button>
+ <button
+  onClick={() => window.open("/certificates.pdf", "_blank")}
+  className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+>
+  Certificates
+</button>
+
           </div>
         </div>
 
@@ -93,7 +103,7 @@ const Header = () => {
               <img
                 src={Profile_1}
                 alt="Simra"
-                className={`rounded-full w-48 h-48 md:w-60 md:h-60 object-cover transition-all duration-700 hover:scale-110 ${
+                className={`rounded-full w-48 h-48 md:w-64 md:h-64 object-cover transition-all duration-700 hover:scale-110 ${
                   visible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-16"

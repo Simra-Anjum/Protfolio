@@ -58,18 +58,24 @@ const Skill = () => {
 
     let animationFrame;
     const start = performance.now();
-    const duration = 2000;
+    const duration = 2000; 
 
     const animateLevels = (time) => {
       const progress = Math.min((time - start) / duration, 1);
       const newLevels = [
-        ...skillsLeft.map((s) => Math.floor(s.level * progress)),
-        ...skillsRight.map((s) => Math.floor(s.level * progress)),
+        ...skillsLeft.map((s) => Math.round(s.level * progress)),
+        ...skillsRight.map((s) => Math.round(s.level * progress)),
       ];
       setAnimatedLevels(newLevels);
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animateLevels);
+      } else {
+       
+        setAnimatedLevels([
+          ...skillsLeft.map((s) => s.level),
+          ...skillsRight.map((s) => s.level),
+        ]);
       }
     };
 
@@ -83,18 +89,18 @@ const Skill = () => {
       key={index}
       className="flex items-center gap-4 sm:gap-6 px-2 sm:px-0"
     >
-   
       <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 shadow-md text-2xl transition-transform duration-500 hover:scale-150 hover:shadow-[0_0_18px_#8e44ad]">
         {skill.icon}
       </div>
 
-     
       <div className="flex-1">
+       
         <div className="flex justify-between mb-1 text-sm sm:text-base">
           <span className="font-medium">{skill.name}</span>
           <span className="text-gray-600">{animatedLevels[index]}%</span>
         </div>
 
+      
         <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
           <div
             className="bg-purple-600 h-2 rounded-full transition-all duration-500 ease-out"
@@ -107,7 +113,7 @@ const Skill = () => {
 
   return (
     <div
-    id="skill"
+      id="skill"
       ref={containerRef}
       className="w-full py-12 sm:py-16 flex flex-col items-center mt-12 sm:mt-20 shadow-lg bg-[#F5F1F7] px-4 sm:px-6"
     >

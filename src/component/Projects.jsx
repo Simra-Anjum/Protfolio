@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import bg1 from "../assets/bg-1.jpg";
-import bg2 from "../assets/bg-2.jpg";
-import bg3 from "../assets/bg-3.png";
-import bg4 from "../assets/bg-4.png";
+import project_1 from "../assets/project-1.png";
+import project_2 from "../assets/project-2.png";
+import project_3 from "../assets/project-3.png";
+import project_4 from "../assets/project-4.png";
+import project_5 from "../assets/project-5.png";
 
 const projectData = [
-  { title: "Project 1", img: bg1 },
-  { title: "Project 2", img: bg2 },
-  { title: "Project 3", img: bg3 },
-  { title: "Project 4", img: bg4 },
-  { title: "Project 5", img: bg1 },
+  { title: "Craze", img: project_1 , description:"Developed a complete e-commerce web app with user authentication, product management, and secure online payments integrated using Stripe API.",link:"https://e-commerce-5-tkdz.onrender.com/"},
+  { title: "LockIt", img: project_2, description:"Built a secure password manager with user login and encryption logic to safely store and manage credentials.",link:"https://lockit-e93l.onrender.com/"},
+  { title: "TodoList", img: project_3, description:"Designed a lightweight to-do list application with task creation, deletion, and simple UI for daily task management.",link:"https://todolist-xxi8.onrender.com/"},
+  { title: "Mobi Pe", img: project_4, description:"Created a responsive static website for digital mobile payment UI/UX demonstration with clean design and smooth navigation.",link:"https://mobi-juur.onrender.com/"},
+  { title: "PdfX", img: project_5, description:"Developed a web tool to upload and merge multiple PDF files into a single document with a simple and intuitive interface.",link:"https://pdfmerge-aghm.onrender.com/"},
 ];
 
 const Projects = () => {
@@ -61,12 +62,12 @@ const Projects = () => {
               {project.title}
             </div>
             <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white p-4 text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-              <p className="text-sm mb-3">
-                Short description of {project.title}.
+              <p className="text-sm mb-3 font-bold">
+              {project.description} 
               </p>
               <a
-                href="#"
-                className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                href={project.link}
+                className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
               >
                 View Project
               </a>
@@ -95,12 +96,12 @@ const Projects = () => {
                 {project.title}
               </div>
               <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white p-4 text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-sm mb-3">
-                  Short description of {project.title}.
+                <p className="text-sm mb-3 font-bold">
+                  {project.description} 
                 </p>
                 <a
-                  href="#"
-                  className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                  href={project.link}
+                  className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
                 >
                   View Project
                 </a>

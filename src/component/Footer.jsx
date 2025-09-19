@@ -14,7 +14,7 @@ const Footer = () => {
       
         <div className="flex gap-6">
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/simra-anjum-687a67241"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-300 transition"
@@ -22,7 +22,7 @@ const Footer = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/Simra-Anjum"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-purple-300 transition"
@@ -46,7 +46,7 @@ const Footer = () => {
             <FaInstagram size={24} />
           </a>
           <a
-            href="mailto:simra@example.com"
+            href="mailto:simraanjum68@gmail.com"
             className="hover:text-purple-300 transition"
           >
             Email Me
