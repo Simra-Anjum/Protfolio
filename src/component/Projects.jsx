@@ -6,7 +6,7 @@ const projectData = [
     title: "Craze", 
     img: "/project-1.png", 
     description:"Developed a complete e-commerce web app with user authentication, product management, and secure online payments integrated using Stripe API.",
-    link:"https://e-commerce-5-tkdz.onrender.com/"
+    link:"https://craze-xuik.onrender.com"
   },
   { 
     title: "LockIt", 
