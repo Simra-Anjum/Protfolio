@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Profile_1 from "../assets/Profile_1.jpg";
+
 
 const Header = () => {
   const containerRef = useRef(null);
@@ -101,8 +101,8 @@ const Header = () => {
             >
             
               <img
-                src={Profile_1}
-                alt="Simra"
+                src="/Profile_1.jpg" alt="Profile"
+                
                 className={`rounded-full w-48 h-48 md:w-64 md:h-64 object-cover transition-all duration-700 hover:scale-110 ${
                   visible
                     ? "opacity-100 translate-y-0"

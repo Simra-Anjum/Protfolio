@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Profile_1 from "../assets/Profile_1.JPG";
+
 
 const About = () => {
   const containerRef = useRef(null);
@@ -78,8 +78,8 @@ const About = () => {
               style={{ transitionDelay: "0.4s" }}
             >
               <img
-                src={Profile_1}
-                alt="Simra"
+               src="/Profile_1.jpg" alt="Profile"
+                
                 className={`rounded-full w-48 h-48 md:w-72 md:h-72 object-cover transition-all duration-700 hover:scale-110 ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
                 }`}

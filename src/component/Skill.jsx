@@ -29,82 +29,53 @@ const skillsRight = [
 ];
 
 const Skill = () => {
-  const containerRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-  const [animatedLevels, setAnimatedLevels] = useState(
-    Array(skillsLeft.length + skillsRight.length).fill(0)
+  const [progress, setProgress] = useState(
+    [...skillsLeft, ...skillsRight].map(() => 0) 
   );
+  const containerRef = useRef(null);
+  const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setAnimate(true);
+          if (entry.isIntersecting && !animated) {
+           
+            setAnimated(true);
+            setProgress([...skillsLeft, ...skillsRight].map(skill => skill.level));
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.4 } 
     );
 
-    if (containerRef.current) observer.observe(containerRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
 
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!animate) return;
-
-    let animationFrame;
-    const start = performance.now();
-    const duration = 2000; 
-
-    const animateLevels = (time) => {
-      const progress = Math.min((time - start) / duration, 1);
-      const newLevels = [
-        ...skillsLeft.map((s) => Math.round(s.level * progress)),
-        ...skillsRight.map((s) => Math.round(s.level * progress)),
-      ];
-      setAnimatedLevels(newLevels);
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animateLevels);
-      } else {
-       
-        setAnimatedLevels([
-          ...skillsLeft.map((s) => s.level),
-          ...skillsRight.map((s) => s.level),
-        ]);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animateLevels);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [animate]);
+  }, [animated]);
 
   const renderSkill = (skill, index) => (
-    <div
-      key={index}
-      className="flex items-center gap-4 sm:gap-6 px-2 sm:px-0"
-    >
+    <div key={index} className="flex items-center gap-4 sm:gap-6 px-2 sm:px-0">
+      
       <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 shadow-md text-2xl transition-transform duration-500 hover:scale-150 hover:shadow-[0_0_18px_#8e44ad]">
         {skill.icon}
       </div>
 
+      
       <div className="flex-1">
-       
         <div className="flex justify-between mb-1 text-sm sm:text-base">
           <span className="font-medium">{skill.name}</span>
-          <span className="text-gray-600">{animatedLevels[index]}%</span>
+          <span className="text-gray-600">{skill.level}%</span>
         </div>
 
-      
+        
         <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
           <div
-            className="bg-purple-600 h-2 rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${animatedLevels[index]}%` }}
+            className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+            style={{ width: `${progress[index]}%` }}
           ></div>
         </div>
       </div>
@@ -122,8 +93,14 @@ const Skill = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-20 w-full max-w-6xl">
-        <div className="space-y-6">{skillsLeft.map(renderSkill)}</div>
-        <div className="space-y-6">{skillsRight.map(renderSkill)}</div>
+        <div className="space-y-6">
+          {skillsLeft.map((skill, i) => renderSkill(skill, i))}
+        </div>
+        <div className="space-y-6">
+          {skillsRight.map((skill, i) =>
+            renderSkill(skill, i + skillsLeft.length)
+          )}
+        </div>
       </div>
     </div>
   );

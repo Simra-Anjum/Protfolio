@@ -1,17 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
-import project_1 from "../assets/project-1.png";
-import project_2 from "../assets/project-2.png";
-import project_3 from "../assets/project-3.png";
-import project_4 from "../assets/project-4.png";
-import project_5 from "../assets/project-5.png";
+
 
 const projectData = [
-  { title: "Craze", img: project_1 , description:"Developed a complete e-commerce web app with user authentication, product management, and secure online payments integrated using Stripe API.",link:"https://e-commerce-5-tkdz.onrender.com/"},
-  { title: "LockIt", img: project_2, description:"Built a secure password manager with user login and encryption logic to safely store and manage credentials.",link:"https://lockit-e93l.onrender.com/"},
-  { title: "TodoList", img: project_3, description:"Designed a lightweight to-do list application with task creation, deletion, and simple UI for daily task management.",link:"https://todolist-xxi8.onrender.com/"},
-  { title: "Mobi Pe", img: project_4, description:"Created a responsive static website for digital mobile payment UI/UX demonstration with clean design and smooth navigation.",link:"https://mobi-juur.onrender.com/"},
-  { title: "PdfX", img: project_5, description:"Developed a web tool to upload and merge multiple PDF files into a single document with a simple and intuitive interface.",link:"https://pdfmerge-aghm.onrender.com/"},
+  { 
+    title: "Craze", 
+    img: "/project-1.png", 
+    description:"Developed a complete e-commerce web app with user authentication, product management, and secure online payments integrated using Stripe API.",
+    link:"https://e-commerce-5-tkdz.onrender.com/"
+  },
+  { 
+    title: "LockIt", 
+    img: "/project-2.png", 
+    description:"Built a secure password manager with user login and encryption logic to safely store and manage credentials.",
+    link:"https://lockit-e93l.onrender.com/"
+  },
+  { 
+    title: "TodoList", 
+    img: "/project-3.png", 
+    description:"Designed a lightweight to-do list application with task creation, deletion, and simple UI for daily task management.",
+    link:"https://todolist-xxi8.onrender.com/"
+  },
+  { 
+    title: "Mobi Pe", 
+    img: "/project-4.png", 
+    description:"Created a responsive static website for digital mobile payment UI/UX demonstration with clean design and smooth navigation.",
+    link:"https://mobi-juur.onrender.com/"
+  },
+  { 
+    title: "PdfX", 
+    img: "/project-5.png", 
+    description:"Developed a web tool to upload and merge multiple PDF files into a single document with a simple and intuitive interface.",
+    link:"https://pdfmerge-aghm.onrender.com/"
+  },
 ];
+
 
 const Projects = () => {
   const containerRef = useRef(null);
