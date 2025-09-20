@@ -14,7 +14,7 @@ const projectData = [
     img: "/project-2.png", 
     description:"Built a secure password manager with user login and encryption logic to safely store and manage credentials.",
     link:"https://lockit-e93l.onrender.com/",
-    github:"hhttps://github.com/Simra-Anjum/LockIt.git"
+    github:"https://github.com/Simra-Anjum/LockIt.git"
   },
   { 
     title: "TodoList", 
