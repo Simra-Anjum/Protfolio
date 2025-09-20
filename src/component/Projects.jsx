@@ -6,31 +6,36 @@ const projectData = [
     title: "Craze", 
     img: "/project-1.png", 
     description:"Developed a complete e-commerce web app with user authentication, product management, and secure online payments integrated using Stripe API.",
-    link:"https://craze-xuik.onrender.com"
+    link:"https://craze-xuik.onrender.com",
+    github:"https://github.com/Simra-Anjum/E-commerce.git"
   },
   { 
     title: "LockIt", 
     img: "/project-2.png", 
     description:"Built a secure password manager with user login and encryption logic to safely store and manage credentials.",
-    link:"https://lockit-e93l.onrender.com/"
+    link:"https://lockit-e93l.onrender.com/",
+    github:"hhttps://github.com/Simra-Anjum/LockIt.git"
   },
   { 
     title: "TodoList", 
     img: "/project-3.png", 
     description:"Designed a lightweight to-do list application with task creation, deletion, and simple UI for daily task management.",
-    link:"https://todolist-xxi8.onrender.com/"
+    link:"https://todolist-xxi8.onrender.com/",
+    github:"https://github.com/Simra-Anjum/Todo-project.git"
   },
   { 
     title: "Mobi Pe", 
     img: "/project-4.png", 
     description:"Created a responsive static website for digital mobile payment UI/UX demonstration with clean design and smooth navigation.",
-    link:"https://mobi-juur.onrender.com/"
+    link:"https://mobi-juur.onrender.com/",
+    github:"https://github.com/Simra-Anjum/mobipe.git"
   },
   { 
     title: "PdfX", 
     img: "/project-5.png", 
     description:"Developed a web tool to upload and merge multiple PDF files into a single document with a simple and intuitive interface.",
-    link:"https://pdfmerge-aghm.onrender.com/"
+    link:"https://pdfmerge-aghm.onrender.com",
+    github:"https://github.com/Simra-Anjum/pdfTools.git"
   },
 ];
 
@@ -87,12 +92,20 @@ const Projects = () => {
               <p className="text-sm mb-3 font-bold">
               {project.description} 
               </p>
-              <a
-                href={project.link}
-                className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
-              >
-                View Project
-              </a>
+              <div className="flex justify-center gap-4"> 
+    <a
+      href={project.link}
+      className="px-4 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+    >
+      View Project
+    </a>
+    <a
+      href={project.github}
+      className="px-4 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+    >
+     GIT HUB
+    </a>
+  </div>
             </div>
           </div>
         ))}
@@ -121,12 +134,20 @@ const Projects = () => {
                 <p className="text-sm mb-3 font-bold">
                   {project.description} 
                 </p>
-                <a
-                  href={project.link}
-                  className="px-6 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
-                >
-                  View Project
-                </a>
+                            <div className="flex justify-center gap-4"> 
+    <a
+      href={project.link}
+      className="px-4 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+    >
+      View Project
+    </a>
+    <a
+      href={project.github}
+      className="px-4 py-2 rounded-lg shadow-md text-white transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500"
+    >
+     GIT HUB
+    </a>
+  </div>
               </div>
             </div>
           );
